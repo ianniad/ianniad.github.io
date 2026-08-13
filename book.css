@@ -1,0 +1,116 @@
+.book-showcase {
+  background: var(--dark);
+  color: #f7f2e8;
+  padding: 82px 0;
+  border-top: 1px solid #343844;
+  scroll-margin-top: 72px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.35fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.book-copy h2 { margin-bottom: 10px; }
+.book-copy > p:not(.eyebrow):not(.book-subtitle) { color: #c8cbd2; font-size: 1.02rem; }
+.book-subtitle {
+  margin: 0 0 30px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #d6bfdd;
+}
+.book-note { margin-top: 28px; padding-top: 24px; border-top: 1px solid #454955; }
+
+.product-pair {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.product-panel {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid #4a4e58;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+}
+
+.book-panel {
+  background-image: url("images/JSWM_stack.jpeg");
+  background-position: center center;
+}
+
+.workbook-panel {
+  background-image: url("images/jswm_workbook.jpg");
+  background-position: center center;
+}
+
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(12, 14, 20, .94) 0%, rgba(18, 19, 27, .68) 33%, rgba(18, 19, 27, .18) 62%, rgba(18, 19, 27, .04) 100%);
+  transition: opacity .2s ease;
+}
+
+.product-panel:hover .panel-overlay { opacity: .92; }
+
+.panel-copy {
+  width: 100%;
+  padding: 30px 28px 0;
+  color: #fff;
+}
+
+.product-type {
+  margin: 0 0 12px;
+  color: #d8bfdf;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.panel-copy h3 {
+  max-width: 300px;
+  margin-bottom: 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  line-height: 1.04;
+  font-weight: 500;
+  color: #d6bfdd;
+}
+
+.panel-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 -28px;
+  padding: 16px 28px;
+  background: rgba(61, 42, 67, .94);
+  border-top: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .book-grid { grid-template-columns: 1fr; }
+  .product-panel { min-height: 520px; }
+}
+
+@media (max-width: 700px) {
+  .book-showcase { padding: 62px 0; }
+  .product-pair { grid-template-columns: 1fr; }
+  .product-panel { min-height: 480px; }
+  .book-panel { background-position: center center; }
+  .workbook-panel { background-position: center 32%; }
+}
